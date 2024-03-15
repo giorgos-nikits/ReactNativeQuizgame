@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import WelcomeScreen from './Screens/WelcomeScreen';
 
 export default function App() {
 
@@ -20,6 +21,16 @@ export default function App() {
       question: 'Largest animal in the world?',
       options: ['Elephant', 'Blue whale', 'Hippopotamus', 'iragge'],
       answer: 'Blue whale'
+    },
+    {
+      question: 'What is the capital of Greece?',
+      options: ['Athens', 'kamilari', 'Crete', 'Thessaloniki'],
+      answer: 'Athens'
+    },
+    {
+      question: 'What is the capital of Greece?',
+      options: ['Athens', 'kamilari', 'Crete', 'Thessaloniki'],
+      answer: 'Athens'
     }
   ]
 
@@ -45,6 +56,7 @@ export default function App() {
   }
 
   return (
+    /*
     <View style={styles.container}>
       {showScore ? <View>
         <Text style={styles.optionStyle}>{score}</Text>
@@ -69,6 +81,9 @@ export default function App() {
       }
      
     </View>
+    */
+
+    <WelcomeScreen></WelcomeScreen>
   );
 }
 

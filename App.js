@@ -2,8 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import WelcomeScreen from './Screens/WelcomeScreen';
+import {NavigationContainer} from '@react-navigation/native';
 
-export default function App() {
+export default function App({navigation}) {
 
   const [currentQuestion, setCurentQuestion] = useState(0);
 
@@ -28,9 +29,9 @@ export default function App() {
       answer: 'Athens'
     },
     {
-      question: 'What is the capital of Greece?',
-      options: ['Athens', 'kamilari', 'Crete', 'Thessaloniki'],
-      answer: 'Athens'
+      question: 'What year was i born?',
+      options: ['1999', '2024', '1975', '2001'],
+      answer: '2001'
     }
   ]
 
@@ -56,7 +57,7 @@ export default function App() {
   }
 
   return (
-    /*
+    
     <View style={styles.container}>
       {showScore ? <View>
         <Text style={styles.optionStyle}>{score}</Text>
@@ -81,9 +82,9 @@ export default function App() {
       }
      
     </View>
-    */
+    
+   
 
-    <WelcomeScreen></WelcomeScreen>
   );
 }
 

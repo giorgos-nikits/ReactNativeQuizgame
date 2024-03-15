@@ -1,7 +1,13 @@
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+
+
+
 
 function WelcomeScreen(props) {
+
+    
 
     const handlePressTest = () => {
         alert("Let's GO!!!");
@@ -10,15 +16,21 @@ function WelcomeScreen(props) {
     return (
         <View style={styles.container}>
 
-            <Image style={styles.imageStyle} source={require('../assets/question.png')} />
-            <Text style={styles.headerText}>Welcome to my quiz game!</Text>
-            <TouchableOpacity onPress={handlePressTest} style={styles.startButton}>
-                <Text style={styles.textButton}>
-                    Start Game
-                </Text>
-            </TouchableOpacity>
+                <Image style={styles.imageStyle} source={require('../assets/question.png')} />
+                <Text style={styles.headerText}>Welcome to my quiz game!</Text>
+                <TouchableOpacity onPress={handlePressTest} style={styles.startButton}>
+                    <Text style={styles.textButton}>
+                        Start Game
+                    </Text>
+                </TouchableOpacity>
+                <Button
+                    title="Go to Jane's profile"
+                    onPress={() =>
+                    navigation.navigate('Profile', {name: 'Jane'})
+                    }
+                />
 
-        </View>
+            </View>
     );
 }
 

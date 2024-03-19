@@ -57,9 +57,12 @@ export default function App({navigation}) {
   }
 
   return (
-    
+    /*
     <View style={styles.container}>
       {showScore ? <View>
+        <Text style={styles.endText}>
+            Congratulations
+        </Text>
         <Text style={styles.optionStyle}>{score}</Text>
         <TouchableOpacity style={styles.optionContainer}>
           <Text style={styles.resetButton} onPress={handleRestart}>
@@ -82,6 +85,9 @@ export default function App({navigation}) {
       }
      
     </View>
+    */
+
+    <WelcomeScreen></WelcomeScreen>
     
    
 
@@ -119,5 +125,11 @@ const styles = StyleSheet.create({
   resetButton:{
     fontSize: 18,
     paddingHorizontal:10,
+    textAlign: 'center'
+  },
+  endText:{
+    fontSize:20,
+    fontWeight: 'bold',
+    paddingBottom:30
   }
 });

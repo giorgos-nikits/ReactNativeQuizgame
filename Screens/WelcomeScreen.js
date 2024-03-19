@@ -13,24 +13,34 @@ function WelcomeScreen(props) {
         alert("Let's GO!!!");
     }
 
+    const handleEasterEgg = () => {
+        alert("You found the easter egg!!!");
+    }
+
     return (
         <View style={styles.container}>
 
-                <Image style={styles.imageStyle} source={require('../assets/question.png')} />
+            <View style={styles.box1}>
+                <TouchableOpacity onPress={handleEasterEgg}>
+                    <Image style={styles.imageStyle} source={require('../assets/question.png')}/>
+                </TouchableOpacity>
                 <Text style={styles.headerText}>Welcome to my quiz game!</Text>
                 <TouchableOpacity onPress={handlePressTest} style={styles.startButton}>
                     <Text style={styles.textButton}>
                         Start Game
                     </Text>
                 </TouchableOpacity>
-                <Button
-                    title="Go to Jane's profile"
-                    onPress={() =>
-                    navigation.navigate('Profile', {name: 'Jane'})
-                    }
-                />
+            </View>
+            <View style={styles.box3}>
 
             </View>
+            <View style={styles.box2}>
+                <Text>I Hope You Enjoy The Game</Text>
+
+            </View>
+
+            
+        </View>
     );
 }
 
@@ -39,9 +49,22 @@ export default WelcomeScreen;
 const styles = StyleSheet.create({
     container:{
         flex:1,
+        padding:20,
+        flexDirection:'column',
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#ccffcc',
+    },
+    box1:{
+        flex:2,
+        paddingTop:100,
+    },
+    box2:{
+        flex:4,
+    },
+    box3:{
+        flex:3,
+
     },
     headerText:{
         fontSize:24,
@@ -59,11 +82,13 @@ const styles = StyleSheet.create({
     },
     textButton:{
         color: '#fff',
+        textAlign: 'center',
     },
     imageStyle:{
         width:100,
         height:100,
         marginBottom:50,
+        alignSelf:'center',
         
     }
     
